@@ -1,6 +1,19 @@
 .wrapper
   = render 'shared/side_bar'
 
+  .right
+    .right__contents
+      %p.right__contents-group
+        = @group.name
+      %p.right__contents-member
+        Members:
+        - @group.users.each do |user|
+          = user.name
+    = link_to edit_group_path(@group) do
+      .right__contents-button
+        %p.edit Edit
+    .right__contents--bellow
+      = render @messages
   
   .form
     .form__message
@@ -8,6 +21,6 @@
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
         .form__mask
           = f.label :image, class: 'form__mask__image' do
-            = icon('fas', 'image', class: 'icon')
+            = fa_icon 'picture-o', class: 'icon'
             = f.file_field :image, class: 'hidden'
         = f.submit 'Send', class: 'form__submit'

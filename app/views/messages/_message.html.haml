@@ -1,11 +1,10 @@
-.message 
-  .upper-message
-    .upper-message__user-name
-      = message.user.name
-    .upper-message__date
-      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-  .lower-message
+.right__contents--bellow__box
+  .right__contents--bellow__box-name
+    = message.user.name
+  .right__contents--bellow__box-time
+    = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .right__contents--bellow__box-message
     - if message.content.present?
-      %p.lower-message__content
+      %p.right__contents--bellow__box-message
         = message.content
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
