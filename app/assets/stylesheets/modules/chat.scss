@@ -1,21 +1,21 @@
 .header {
   background-color: $light_blue;
   width: 100vw;
-  height: 30px;
+  height: 100vh;
   color: $white;
   text-align:center;
 }
 
 .wrapper {
   width: 100vw;
-  height: 827px;
+  height: 100vh;
 
   .side-bar {
     box-sizing: border-box;
     float: left;
     width: 300px;
     color: $white;
-    height: 827px;
+    height: 1000px;
     background-color: $side_blue_light;
     &__top {
       padding: 35px 20px 47px 20px;
@@ -90,7 +90,7 @@
         }
       }
       &--bellow {
-        // overflow-y: scroll;
+        overflow-y: scroll;
         height: calc(100vh - 190px);
         &__box {
           padding:20px 0px 20px 40px;
